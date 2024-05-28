@@ -57,13 +57,32 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\JCDLL(2)\lplabelingservice\lplabelingservice\3dpart\lpmqservice\include;F:\JCDLL(2)\lplabelingservice\lplabelingservice\include\lpmessagedefine;F:\JCDLL(2)\lplabelingservice\lplabelingservice\include\lpbusinessutils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>lpmqservice.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>F:\JCDLL(2)\lplabelingservice\lplabelingservice\3dpart\lpmqservice\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\JCDLL(2)\lplabelingservice\lplabelingservice\3dpart\lpmqservice\include;F:\JCDLL(2)\lplabelingservice\lplabelingservice\include\lpmessagedefine;F:\JCDLL(2)\lplabelingservice\lplabelingservice\include\lpbusinessutils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>F:\JCDLL(2)\lplabelingservice\lplabelingservice\3dpart\lpmqservice\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lpmqservice.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>LPLABELINGSERVICE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LPLABELINGSERVICE_LIB;LPMQSERVICE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -76,16 +95,20 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>LPLABELINGSERVICE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LPLABELINGSERVICE_LIB;LPMQSERVICE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="include\lpbusinessutils\lptasktimer.cpp" />
+    <ClCompile Include="lpcoortransformservice\lpstationmgr.cpp" />
+    <ClCompile Include="LPLabelingServicePrivate.cpp" />
+    <ClInclude Include="LPLabelingServicePrivate.h" />
     <ClInclude Include="lplabelingservice_global.h" />
-    <QtMoc Include="lplabelingservice.h" />
+    <ClInclude Include="lplabelingservice.h" />
     <ClCompile Include="lplabelingservice.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

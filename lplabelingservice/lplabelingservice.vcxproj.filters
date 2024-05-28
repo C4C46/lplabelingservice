@@ -26,12 +26,25 @@
     <ClInclude Include="lplabelingservice_global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <QtMoc Include="lplabelingservice.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <ClCompile Include="lplabelingservice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-
+    <ClInclude Include="lplabelingservice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LPLabelingServicePrivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LPLabelingServicePrivate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\lpbusinessutils\lptasktimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lpcoortransformservice\lpstationmgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
