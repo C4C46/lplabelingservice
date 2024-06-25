@@ -44,11 +44,6 @@ void lplabelingservice::recvMsg(QByteArray & ba, const MsgReceiverInfo & receive
 		handleIpuStatus(in, receiverInfo);
 		break;
 	}
-	case LP_LITHIUM_LABELING_TAG:
-	{
-		handleLabelingTag(in, receiverInfo);
-		break;
-	}
 
 	default:
 		break;
